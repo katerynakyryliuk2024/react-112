@@ -1,6 +1,7 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
-import svgr from "vite-plugin-svgr";
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react-swc';
+import svgr from 'vite-plugin-svgr';
+import dsv from '@rollup/plugin-dsv';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -8,13 +9,14 @@ export default defineConfig({
     react(),
     svgr({
       svgrOptions: {
-        exportType: "default",
+        exportType: 'default',
         ref: true,
         svgo: false,
         titleProp: true,
       },
-      include: "**/*.svg",
+      include: '**/*.svg',
     }),
+    dsv(),
   ],
   build: {
     sourcemap: true,

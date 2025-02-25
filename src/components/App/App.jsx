@@ -5,6 +5,9 @@ import css from './App.module.css';
 import articles from '../../articles.json';
 // import Counter from '../Counter/Counter';
 // import CountDisplay from '../CountDisplay/CountDisplay';
+import data from '../../data.csv';
+
+console.log(data);
 
 const accordionItems = [
   {
