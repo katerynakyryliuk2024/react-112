@@ -1,62 +1,42 @@
+// import ClickTracker from '../ClickTracker';
+// import Reader from '../Reader/Reader';
+// import articles from '../../articles.json';
+
 // import { useState } from 'react';
-import Accordion from '../Accordion/Accordion';
-import Reader from '../Reader/Reader';
+// import Timer from '../Timer';
+// import Sidebar from '../Sidebar/Sidebar';
+// import ThemeSwitcher from '../ThemeSwitcher';
+import ActivityTracker from '../ActivityTracker';
 import css from './App.module.css';
-import articles from '../../articles.json';
-// import Counter from '../Counter/Counter';
-// import CountDisplay from '../CountDisplay/CountDisplay';
-import data from '../../data.csv';
-
-console.log(data);
-
-const accordionItems = [
-  {
-    title: 'How does an accordion work?',
-    content:
-      'An accordion allows users to expand and collapse sections of content, typically showing only one open section at a time.',
-  },
-  {
-    title: 'What are the benefits of using an accordion?',
-    content:
-      'Accordions help organize content efficiently, reduce scrolling, and improve user experience by displaying only relevant information.',
-  },
-  {
-    title: "Can an accordion be styled to match a website's design?",
-    content:
-      'Yes, accordions can be fully customized with CSS or component libraries to fit the look and feel of any website.',
-  },
-  {
-    title: 'How to create an accordion in React?',
-    content:
-      'In React, you can create an accordion using state to track the open section and conditionally render content.',
-  },
-  {
-    title: 'Are there any ready-made libraries for accordions?',
-    content:
-      'Yes, libraries like Material-UI, Bootstrap, and React-Accordion provide pre-built accordion components for easy implementation.',
-  },
-];
 
 export default function App() {
-  // const [clicks, setClicks] = useState(0);
+  // const [isTimerMounted, setIsTimerMounted] = useState(false);
 
-  // const handleClick = () => {
-  //   setClicks(clicks + 1);
-  // };
+  // const toggleTimer = () => setIsTimerMounted(!isTimerMounted);
+
+  // const [isOpen, setIsOpen] = useState(false);
+
+  // const openSidebar = () => setIsOpen(true);
+
+  // const closeSidebar = () => setIsOpen(false);
 
   return (
     <div className={css.container}>
-      <h1 className={css.title}>State in React</h1>
+      <h1 className={css.title}>Effects in React</h1>
 
-      <Reader items={articles} />
+      <ActivityTracker />
 
-      <Accordion items={accordionItems} />
+      {/* <ThemeSwitcher /> */}
 
-      {/* <CountDisplay count={clicks} />
+      {/* <Reader items={articles} /> */}
 
-      <Counter text="A" onUpdate={handleClick} />
-      <Counter text="B" onUpdate={handleClick} />
-      <Counter text="C" onUpdate={handleClick} /> */}
+      {/* <ClickTracker /> */}
+
+      {/* <button onClick={openSidebar}>Open</button>
+      {isOpen && <Sidebar onClose={closeSidebar} />} */}
+
+      {/* <button onClick={toggleTimer}>{isTimerMounted ? 'Hide' : 'Show'}</button>
+      {isTimerMounted && <Timer />} */}
     </div>
   );
 }
