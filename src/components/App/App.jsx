@@ -1,42 +1,41 @@
-// import ClickTracker from '../ClickTracker';
-// import Reader from '../Reader/Reader';
-// import articles from '../../articles.json';
-
-// import { useState } from 'react';
-// import Timer from '../Timer';
-// import Sidebar from '../Sidebar/Sidebar';
-// import ThemeSwitcher from '../ThemeSwitcher';
-import ActivityTracker from '../ActivityTracker';
+import { useState } from 'react';
+// import UserForm from '../UserForm/UserForm';
 import css from './App.module.css';
+import OrderForm from '../OrderForm/OrderForm';
+import AppBar from '../AppBar/AppBar';
 
 export default function App() {
-  // const [isTimerMounted, setIsTimerMounted] = useState(false);
+  const [filter, setFilter] = useState('');
+  const [lang, setLang] = useState('en');
 
-  // const toggleTimer = () => setIsTimerMounted(!isTimerMounted);
+  const handleFilterChange = (newValue) => {
+    setFilter(newValue);
+  };
 
-  // const [isOpen, setIsOpen] = useState(false);
+  const handleChangeLang = (newLang) => {
+    setLang(newLang);
+  };
 
-  // const openSidebar = () => setIsOpen(true);
+  // const [users, setUsers] = useState([]);
 
-  // const closeSidebar = () => setIsOpen(false);
+  // const addUser = (newUser) => {
+  //   setUsers((prevUsers) => {
+  //     return [...prevUsers, newUser];
+  //   });
+  // };
 
   return (
     <div className={css.container}>
-      <h1 className={css.title}>Effects in React</h1>
-
-      <ActivityTracker />
-
-      {/* <ThemeSwitcher /> */}
-
-      {/* <Reader items={articles} /> */}
-
-      {/* <ClickTracker /> */}
-
-      {/* <button onClick={openSidebar}>Open</button>
-      {isOpen && <Sidebar onClose={closeSidebar} />} */}
-
-      {/* <button onClick={toggleTimer}>{isTimerMounted ? 'Hide' : 'Show'}</button>
-      {isTimerMounted && <Timer />} */}
+      <AppBar
+        filter={filter}
+        lang={lang}
+        onFilter={handleFilterChange}
+        onSelectLang={handleChangeLang}
+      />
+      <h2>Current lang: {lang}</h2>
+      <h2>Filter: {filter}</h2>
+      <OrderForm onOrder={(newOrder) => console.log(newOrder)} />
+      {/* <UserForm onAdd={addUser} /> */}
     </div>
   );
 }
