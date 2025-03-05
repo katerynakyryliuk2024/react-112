@@ -24,4 +24,9 @@ export default defineConfig({
   server: {
     open: true,
   },
+  css: {
+    modules: {
+      localsConvention: 'camelCaseOnly',
+    },
+  },
 });
